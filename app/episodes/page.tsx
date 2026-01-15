@@ -1,4 +1,4 @@
-import EpisodeCard from "@/components/EpisodeCard";
+import EpisodeCard from "@/components/episodecard";
 
 export default function Episodes() {
   return (
