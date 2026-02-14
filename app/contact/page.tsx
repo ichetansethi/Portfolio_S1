@@ -29,9 +29,10 @@ export default function ContactPage() {
 
         <ul className="mt-8 space-y-4">
           {[
-            { label: "Email", value: "your.email@example.com" },
-            { label: "GitHub", value: "github.com/yourhandle" },
-            { label: "LinkedIn", value: "linkedin.com/in/yourprofile" },
+            { label: "Email", value: "chetansethi58@gmail.com", href: "mailto:chetansethi58@gmail.com" },
+            { label: "Phone", value: "+91 8077948757", href: "tel:+918077948757" },
+            { label: "GitHub", value: "github.com/ichetansethi", href: "https://github.com/ichetansethi" },
+            { label: "LinkedIn", value: "linkedin.com/chetansethi23", href: "https://linkedin.com/in/chetansethi23" },
           ].map((item, i) => (
             <motion.li
               key={item.label}
@@ -43,7 +44,14 @@ export default function ContactPage() {
               <span className="text-netflix-red font-mono text-xs w-20">
                 {item.label}
               </span>
-              <span className="text-gray-300">{item.value}</span>
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+              >
+                {item.value}
+              </a>
             </motion.li>
           ))}
         </ul>

@@ -37,10 +37,9 @@ export default function AboutPage() {
         </p>
 
         <p>
-          More recently, I&apos;ve been building with React, Next.js, and
-          TypeScript — shipping full-stack applications with clean
-          component architecture, type-safe API contracts, and responsive
-          design. This portfolio is one of them.
+          I also work with Python for scripting, automation, and data
+          processing — building tools with Django, Flask, FastAPI, and
+          leveraging Pandas and DuckDB for fast analytical workloads.
         </p>
 
         <p>
@@ -62,13 +61,16 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm text-gray-400">
           {[
             "Java & Spring Boot",
-            "React & Next.js",
-            "TypeScript",
+            "Python",
+            "Django & Flask",
+            "FastAPI",
             "Kafka & Flink",
             "PostgreSQL & SQL",
+            "DuckDB",
+            "Pandas & NumPy",
             "Jenkins & CI/CD",
-            "Tailwind CSS",
-            "Framer Motion",
+            "React & JavaScript",
+            "AWS",
             "Git & GitHub",
           ].map((tech, i) => (
             <motion.div
