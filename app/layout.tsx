@@ -1,6 +1,10 @@
 import "./global.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import LayoutWrapper from "@/components/layout-wrapper";
+
+export const metadata = {
+  title: "Chetan Sethi | Portfolio",
+  description: "Software Engineer building production-grade systems",
+};
 
 export default function RootLayout({
   children,
@@ -10,11 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

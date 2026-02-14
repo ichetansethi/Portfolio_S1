@@ -1,22 +1,51 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface EpisodeCardProps {
+  number: number;
   title: string;
+  subtitle: string;
   href: string;
+  index: number;
 }
 
 export default function EpisodeCard({
+  number,
   title,
+  subtitle,
   href,
+  index,
 }: EpisodeCardProps) {
   return (
-    <Link href={href}>
-      <div className="border border-gray-700 rounded-lg p-6 cursor-pointer hover:border-red-600 transition">
-        <h2 className="text-xl font-semibold">{title}</h2>
-        <p className="mt-2 text-sm text-gray-400">
-          View episode
-        </p>
-      </div>
-    </Link>
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.15 * index, duration: 0.6, ease: "easeOut" }}
+    >
+      <Link href={href}>
+        <div className="group relative border border-gray-800 rounded-sm p-6 cursor-pointer transition-all duration-300 hover:border-netflix-red/60 hover:bg-white/[0.03] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(229,9,20,0.15)]">
+          {/* Episode number */}
+          <span className="text-netflix-red font-mono text-xs tracking-widest">
+            E{String(number).padStart(2, "0")}
+          </span>
+
+          {/* Title */}
+          <h2 className="text-xl font-semibold mt-2 group-hover:text-white transition-colors">
+            {title}
+          </h2>
+
+          {/* Subtitle */}
+          <p className="mt-2 text-sm text-gray-500 group-hover:text-gray-400 transition-colors">
+            {subtitle}
+          </p>
+
+          {/* Play indicator on hover */}
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span className="text-netflix-red text-lg">&#9654;</span>
+          </div>
+        </div>
+      </Link>
+    </motion.div>
   );
 }

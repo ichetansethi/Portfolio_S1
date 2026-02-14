@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+@theme {
+  --color-netflix-red: #E50914;
+  --font-family-sans: 'Roboto', sans-serif;
+  --font-family-mono: 'Roboto Mono', monospace;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(229, 9, 20, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(229, 9, 20, 0.6); }
+}
 
 html, body {
   padding: 0;
@@ -11,6 +25,7 @@ html, body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 * {
@@ -19,11 +34,6 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Mono', monospace;
-  color: #fff;
-}
-
-p {
-  line-height: 1.6;
 }
 
 button {
@@ -31,6 +41,22 @@ button {
   outline: none;
 }
 
-main {
-  min-height: calc(100vh - 80px); /* Navbar + footer approx */
+/* Netflix-style text glow */
+.text-glow-red {
+  text-shadow: 0 0 40px rgba(229, 9, 20, 0.5), 0 0 80px rgba(229, 9, 20, 0.3);
+}
+
+/* Scanline overlay for cinematic feel */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
 }
