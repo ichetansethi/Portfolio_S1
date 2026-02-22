@@ -30,6 +30,7 @@ export default function Episodes() {
             number={i + 1}
             title={ep.title}
             subtitle={ep.subtitle}
+            preview={ep.preview}
             href={`/episodes/${ep.id}`}
             index={i}
           />

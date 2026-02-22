@@ -4,6 +4,7 @@ export default function BackendEpisode() {
   return (
     <EpisodeLayout
       episodeNumber={1}
+      episodeId="backend"
       title="Backend Engineering"
       subtitle="Java · Spring Boot · Production APIs"
     >

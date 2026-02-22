@@ -4,7 +4,8 @@ export default function NextSeasonEpisode() {
   return (
     <EpisodeLayout
       episodeNumber={5}
-      title="The Next Season"
+      episodeId="next-season"
+      title="Frontend Engineering"
       subtitle="React · Next.js · TypeScript · Full-Stack"
     >
       <p>

@@ -4,6 +4,7 @@ export default function DatabaseEpisode() {
   return (
     <EpisodeLayout
       episodeNumber={3}
+      episodeId="database"
       title="Databases & Reliability"
       subtitle="SQL · PostgreSQL · Schema Evolution"
     >

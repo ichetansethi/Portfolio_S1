@@ -4,6 +4,7 @@ export default function CicdEpisode() {
   return (
     <EpisodeLayout
       episodeNumber={4}
+      episodeId="cicd"
       title="CI/CD & Production Awareness"
       subtitle="Jenkins · Docker · Deployment Pipelines"
     >

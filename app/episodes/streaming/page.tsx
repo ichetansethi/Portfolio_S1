@@ -4,6 +4,7 @@ export default function StreamingEpisode() {
   return (
     <EpisodeLayout
       episodeNumber={2}
+      episodeId="streaming"
       title="Streaming & Data"
       subtitle="Kafka · Apache Flink · Real-time Pipelines"
     >
